@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinton Nzau Mutuku — Portfolio</title>
+<meta name="description" content="Clinton Nzau Mutuku — CEH-certified offensive security engineer, software and website developer, and backend/automation engineer.">
+<link rel="canonical" href="https://github.com/hexacrimsonlabs/Clinton-portfolio">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:title" content="Clinton Nzau Mutuku — Portfolio">
+<meta property="og:description" content="CEH-certified offensive security engineer, backend/automation engineer and full-stack developer based in Nairobi.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://github.com/hexacrimsonlabs/Clinton-portfolio">
+<meta property="og:image" content="https://raw.githubusercontent.com/hexacrimsonlabs/Clinton-portfolio/main/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Clinton Nzau Mutuku — Portfolio">
+<meta name="twitter:description" content="CEH-certified offensive security engineer, backend/automation engineer and full-stack developer based in Nairobi.">
+
+<!-- Performance: fonts -->
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" onload="this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+
+<!-- Favicons (placeholders - replace with your icons if you add them to repo) -->
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0A0B0D">
+
+<!-- Basic Content Security Policy (meta-level). Adjust to your hosting requirements. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https:;">
+
+<!-- JSON-LD structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Clinton Nzau Mutuku",
+  "jobTitle": "Offensive Security Engineer",
+  "description": "CEH-certified security engineer specializing in offensive security, red team operations, vulnerability research, and backend/automation engineering.",
+  "url": "https://github.com/hexacrimsonlabs/Clinton-portfolio",
+  "email": "mailto:nzauclinton88@gmail.com",
+  "telephone": "+254742585873",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ruaraka",
+    "addressRegion": "Nairobi",
+    "addressCountry": "Kenya"
+  }
+}
+</script>
+
+<style>
+  :root{
+    --bg:#0A0B0D;
+    --panel:#111318;
+    --panel-2:#161920;
+    --line:#262A33;
+    --line-soft:#1D2027;
+    --text:#E9E7E0;
+    --text-dim:#8A909C;
+    --text-faint:#565C68;
+    --crimson:#C4364A;
+    --crimson-dim:#7A2434;
+    --crimson-glow:#E14F63;
+    --amber:#D99A45;
+    --green:#5FAE7A;
+    --mono:'IBM Plex Mono', ui-monospace, monospace;
+    --sans:'Inter', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--crimson-dim); color:#fff;}
+  a{color:inherit;}
+  .wrap{max-width:920px; margin:0 auto; padding:0 28px;}
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--crimson-glow);
+    outline-offset:3px;
+  }
+
+  /* Skip link */
+  .skip-link{
+    position:fixed; top:8px; left:8px; z-index:60;
+    background:var(--panel); color:var(--text); padding:10px 12px; border-radius:6px;
+    transform:translateY(-200%); transition:transform .18s ease; font-family:var(--mono); font-size:13px;
+  }
+  .skip-link:focus{transform:translateY(0);} 
+
+  /* background grid texture */
+  .grid-bg{
+    position:fixed; inset:0; z-index:-1;
+    background-image:
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size:42px 42px;
+    opacity:0.35;
+    mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 90%);
+  }
+
+  /* ---- nav ---- */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(10,11,13,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 28px; max-width:920px; margin:0 auto;
+  }
+  .brand{
+    display:flex; align-items:center; gap:9px;
+    font-family:var(--mono); font-weight:600; font-size:13.5px;
+    letter-spacing:0.02em; color:var(--text);
+    text-decoration:none;
+  }
+  .brand .hexmark{
+    width:16px; height:16px; flex:none;
+  }
+  .navlinks{display:flex; gap:26px; font-family:var(--mono); font-size:12.5px;}
+  .navlinks a{
+    text-decoration:none; color:var(--text-dim);
+    transition:color .15s ease;
+  }
+  .navlinks a:hover{color:var(--crimson-glow);} 
+  .navlinks{display:none;}
+  @media(min-width:640px){ .navlinks{display:flex;} }
+
+  /* ---- hero ---- */
+  .hero{padding:88px 0 64px;}
+  .term-line{
+    font-family:var(--mono); font-size:12.5px; color:var(--text-faint);
+    display:flex; align-items:center; gap:8px; margin-bottom:22px;
+    min-height:16px;
+  }
+  .term-line .dot{
+    width:7px; height:7px; border-radius:50%;
+    background:var(--green);
+    box-shadow:0 0 0 3px rgba(95,174,122,0.15);
+    flex:none;
+  }
+  #boot-text{white-space:pre;}
+  .cursor{display:inline-block; width:7px; height:14px; background:var(--crimson-glow); vertical-align:-2px; animation:blink 1s steps(1) infinite;}
+  @keyframes blink{50%{opacity:0;}}
+
+  .hero h1{
+    font-family:var(--mono);
+    font-weight:600;
+    font-size:clamp(30px, 6vw, 50px);
+    line-height:1.12;
+    letter-spacing:-0.01em;
+    color:var(--text);
+    opacity:0; transform:translateY(6px);
+  }
+  .hero h1 .accent{color:var(--crimson-glow);} 
+  .hero .role{
+    font-family:var(--mono); font-size:clamp(13px,2vw,15px);
+    color:var(--text-dim); margin-top:12px; max-width:560px;
+    opacity:0; transform:translateY(6px);
+  }
+  .hero .lede{
+    margin-top:20px; font-size:16.5px; color:var(--text); max-width:600px;
+    opacity:0; transform:translateY(6px);
+  }
+  .hero .lede b{color:var(--text); font-weight:600;}
+
+  .reveal{animation:rise .5s ease forwards;}
+  @keyframes rise{to{opacity:1; transform:translateY(0);}}
+
+  .status-strip{
+    display:flex; flex-wrap:wrap; gap:10px;
+    margin-top:32px;
+    opacity:0; transform:translateY(6px);
+  }
+  .chip{
+    display:flex; align-items:center; gap:7px;
+    border:1px solid var(--line); background:var(--panel);
+    border-radius:3px; padding:7px 12px;
+    font-family:var(--mono); font-size:11.5px; color:var(--text-dim);
+  }
+  .chip .dot{width:6px; height:6px; border-radius:50%; flex:none;}
+  .chip .dot.on{background:var(--green); box-shadow:0 0 0 2px rgba(95,174,122,0.18);} 
+  .chip .dot.warn{background:var(--amber); box-shadow:0 0 0 2px rgba(217,154,69,0.18);} 
+  .chip b{color:var(--text); font-weight:500;}
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal, .hero h1, .hero .role, .hero .lede, .status-strip{
+      animation:none !important; opacity:1 !important; transform:none !important;
+    }
+    .cursor{animation:none;}
+  }
+
+  /* ---- section shell ---- */
+  section{padding:56px 0;}
+  section + section{border-top:1px solid var(--line);} 
+  .cmd{
+    font-family:var(--mono); font-size:12.5px; color:var(--crimson-glow);
+    margin-bottom:6px; display:flex; align-items:center; gap:8px;
+  }
+  .cmd::before{content:'$'; color:var(--text-faint);} 
+  .sec-title{
+    font-family:var(--mono); font-weight:600; font-size:22px; color:var(--text);
+    margin-bottom:28px; letter-spacing:-0.01em;
+  }
+
+  /* ---- rest unchanged ---- */
+  .cap-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line); border-radius:6px; overflow:hidden;
+  }
+  @media(max-width:760px){ .cap-grid{grid-template-columns:1fr;} }
+  .cap{
+    background:var(--panel); padding:22px 20px;
+  }
+  .cap .cap-tag{
+    font-family:var(--mono); font-size:10.5px; color:var(--text-faint);
+    text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;
+    display:block;
+  }
+  .cap h3{
+    font-family:var(--sans); font-weight:600; font-size:16px; color:var(--text);
+    margin-bottom:12px;
+  }
+  .cap ul{list-style:none; display:flex; flex-direction:column; gap:8px;}
+  .cap li{
+    font-size:13.5px; color:var(--text-dim); padding-left:14px; position:relative; line-height:1.5;
+  }
+  .cap li::before{
+    content:''; position:absolute; left:0; top:7px;
+    width:5px; height:5px; background:var(--crimson); border-radius:1px;
+  }
+  .cap.security .cap-tag{color:var(--crimson-glow);} 
+  .cap.trading .cap-tag{color:var(--amber);} 
+  .cap.backend .cap-tag{color:#6FA8DC;}
+
+  .log{
+    border:1px solid var(--line); border-radius:6px; overflow:hidden;
+  }
+  .log-row{
+    display:grid; grid-template-columns:150px 1fr; gap:18px;
+    padding:18px 20px; background:var(--panel);
+  }
+  .log-row + .log-row{border-top:1px solid var(--line);} 
+  @media(max-width:600px){ .log-row{grid-template-columns:1fr; gap:6px;} }
+  .log-status{
+    font-family:var(--mono); font-size:11px; display:flex; align-items:center; gap:7px; height:fit-content;
+  }
+  .log-status .dot{width:6px; height:6px; border-radius:50%; background:var(--green); flex:none;
+    box-shadow:0 0 0 2px rgba(95,174,122,0.18);} 
+  .log-status span{color:var(--green); letter-spacing:0.04em;} 
+  .log-body h4{font-size:15px; font-weight:600; color:var(--text); margin-bottom:4px;} 
+  .log-body p{font-size:13.5px; color:var(--text-dim);} 
+
+  .fleet-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:14px;
+  }
+  @media(max-width:700px){ .fleet-grid{grid-template-columns:1fr;} }
+  .svc{
+    border:1px solid var(--line); border-radius:6px; background:var(--panel);
+    padding:20px; transition:border-color .15s ease, background .15s ease;
+  }
+  .svc:hover{border-color:var(--crimson-dim); background:var(--panel-2);} 
+  .svc-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;} 
+  .svc-head h4{font-size:15px; font-weight:600; color:var(--text);} 
+  .svc-status{
+    font-family:var(--mono); font-size:10px; letter-spacing:0.06em;
+    padding:3px 8px; border-radius:3px; display:flex; align-items:center; gap:6px;
+  }
+  .svc-status .dot{width:5px; height:5px; border-radius:50%;}
+  .svc-status.online{color:var(--green); background:rgba(95,174,122,0.08); border:1px solid rgba(95,174,122,0.25);} 
+  .svc-status.online .dot{background:var(--green);} 
+  .svc-status.live{color:var(--crimson-glow); background:rgba(196,54,74,0.08); border:1px solid rgba(196,54,74,0.3);} 
+  .svc-status.live .dot{background:var(--crimson-glow);} 
+  .svc-status.concept{color:var(--text-faint); background:transparent; border:1px solid var(--line);} 
+  .svc-status.concept .dot{background:var(--text-faint);} 
+  .svc .svc-sub{font-family:var(--mono); font-size:11px; color:var(--text-faint); margin-bottom:10px;} 
+  .svc p.desc{font-size:13.5px; color:var(--text-dim); margin-bottom:12px;} 
+  .tags{display:flex; flex-wrap:wrap; gap:6px;} 
+  .tag{
+    font-family:var(--mono); font-size:10.5px; color:var(--text-dim);
+    border:1px solid var(--line); border-radius:3px; padding:3px 7px;
+  }
+
+  .contact-panel{
+    border:1px solid var(--line); border-radius:6px; background:var(--panel);
+    padding:32px 28px;
+  }
+  .contact-panel .cmd{margin-bottom:14px;} 
+  .contact-panel p.msg{font-size:15px; color:var(--text-dim); max-width:520px; margin-bottom:24px;} 
+  .contact-rows{display:flex; flex-direction:column; gap:0; border-top:1px solid var(--line);} 
+  .crow{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 0; border-bottom:1px solid var(--line);
+    font-family:var(--mono); font-size:13.5px;
+  }
+  .crow .k{color:var(--text-faint);} 
+  .crow a.v, .crow .v{color:var(--text); text-decoration:none;} 
+  .crow a.v:hover{color:var(--crimson-glow);} 
+
+  footer{
+    padding:28px 0 40px; text-align:center;
+    font-family:var(--mono); font-size:11px; color:var(--text-faint);
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+<div class="grid-bg" aria-hidden="true"></div>
+
+<header class="nav" role="banner">
+  <div class="nav-inner">
+    <a href="#main" class="brand">
+      <svg class="hexmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M4 4L11 12L4 20" stroke="#C4364A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13 20H20" stroke="#C4364A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      clinton_mutuku
+    </a>
+    <nav class="navlinks" role="navigation" aria-label="Primary">
+      <a href="#capabilities">capabilities</a>
+      <a href="#engagements">engagements</a>
+      <a href="#projects">projects</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <div class="wrap">
+    <section class="hero" style="border-top:none; padding-top:88px;">
+      <div class="term-line">
+        <span class="dot" aria-hidden="true"></span>
+        <span id="boot-text" aria-live="polite"></span><span class="cursor" aria-hidden="true"></span>
+      </div>
+
+      <h1 id="h1-line">Clinton Nzau Mutuku</h1>
+      <p class="role" id="h1-role">Offensive Security Engineer &mdash; Backend &amp; Automation Engineer</p>
+
+      <p class="lede" id="h1-lede">
+        <b>CEH-certified</b> security engineer specializing in offensive security &mdash; application security,
+        red team operations, vulnerability research &mdash; paired with full-stack software and website
+        development and production backend engineering across bot platforms, automation systems, and
+        trading infrastructure. Builds systems end-to-end and attacks them deliberately to harden them.
+      </p>
+
+      <div class="status-strip" id="h1-status">
+        <div class="chip"><span class="dot on" aria-hidden="true"></span>CEH <b>verified</b></div>
+        <div class="chip"><span class="dot on" aria-hidden="true"></span>Based in <b>Nairobi, KE</b></div>
+        <div class="chip"><span class="dot warn" aria-hidden="true"></span>Status: <b>open to engagements</b></div>
+      </div>
+    </section>
+
+    <section id="capabilities">
+      <div class="cmd">cat ./capabilities.json</div>
+      <h2 class="sec-title">Technical skills</h2>
+      <div class="cap-grid">
+        <div class="cap security">
+          <span class="cap-tag">Security</span>
+          <h3>Offensive security</h3>
+          <ul>
+            <li>Certified Ethical Hacker (CEH)</li>
+            <li>Web, API, and mobile attack surface analysis</li>
+            <li>Red team ops &mdash; adversary simulation, privilege escalation, Active Directory attack paths</li>
+            <li>Bug bounty research on HackerOne</li>
+            <li>Kali Linux, Parrot OS, ADB, custom security scripts and scanners</li>
+          </ul>
+        </div>
+        <div class="cap backend">
+          <span class="cap-tag">Backend &amp; infra</span>
+          <h3>Systems engineering</h3>
+          <ul>
+            <li>Full-stack software and website development</li>
+            <li>TypeScript, Node.js, Python</li>
+            <li>grammy (Telegram), Slack Bolt</li>
+            <li>Drizzle ORM, PostgreSQL (Neon), Supabase</li>
+            <li>esbuild, pnpm workspaces, monorepo architecture, Render</li>
+            <li>React &middot; OAuth, webhooks, OpenRouter multi-model fallback, Stripe</li>
+          </ul>
+        </div>
+        <div class="cap trading">
+          <span class="cap-tag">Trading systems</span>
+          <h3>Quant infrastructure</h3>
+          <ul>
+            <li>Smart Money Concepts (SMC) execution logic</li>
+            <li>Live Binance WebSocket data feeds</li>
+            <li>Multi-pair trading systems, ATR-based execution</li>
+            <li>Backtesting framework development</li>
+            <li>Latency optimization &amp; live capital management</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="engagements">
+      <div class="cmd">tail -f engagements.log</div>
+      <h2 class="sec-title">Security engagements &amp; research</h2>
+      <div class="log">
+        <div class="log-row">
+          <div class="log-status"><span class="dot" aria-hidden="true"></span><span>CLIENT CONTRACT</span></div>
+          <div class="log-body">
+            <h4>Red team engagement</h4>
+            <p>Adversary simulation for a client engagement, including Active Directory attack path mapping and privilege escalation testing.</p>
+          </div>
+        </div>
+        <div class="log-row">
+          <div class="log-status"><span class="dot" aria-hidden="true"></span><span>HACKERONE</span></div>
+          <div class="log-body">
+            <h4>Bug bounty research</h4>
+            <p>Independent vulnerability research and reporting on the HackerOne platform, assessing web and API attack surfaces.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="cmd">ls -la ./fleet</div>
+      <h2 class="sec-title">Projects &mdash; fleet status</h2>
+      <div class="fleet-grid">
+
+        <div class="svc">
+          <div class="svc-head">
+            <h4>Bot-Command-Central / Crescent</h4>
+            <span class="svc-status online"><span class="dot" aria-hidden="true"></span>online</span>
+          </div>
+          <div class="svc-sub">production telegram bot platform</div>
+          <p class="desc">TypeScript monorepo with tiered access control, the Hexagon AI assistant layer with multi-model fallback via OpenRouter, and Harmony DB health monitoring with automated backups. CryptoBot payments integrated; esbuild / pnpm / Render deployment issues resolved in CI.</p>
+          <div class="tags"><span class="tag">typescript</span><span class="tag">monorepo</span><span class="tag">openrouter</span></div>
+        </div>
+
+        <div class="svc">
+          <div class="svc-head">
+            <h4>Hex</h4>
+            <span class="svc-status online"><span class="dot" aria-hidden="true"></span>online</span>
+          </div>
+          <div class="svc-sub">slack ai agent system &mdash; bolt framework</div>
+          <p class="desc">Voice-activated agent with state commands and three distinct AI personas. Cron-scheduled briefings, with a React monitoring dashboard.</p>
+          <div class="tags"><span class="tag">slack bolt</span><span class="tag">react</span><span class="tag">cron</span></div>
+        </div>
+
+        <div class="svc">
+          <div class="svc-head">
+            <h4>C.L.I.N.T.O.N.</h4>
+            <span class="svc-status online"><span class="dot" aria-hidden="true"></span>active</span>
+          </div>
+          <div class="svc-sub">multi-agent orchestration system</div>
+          <p class="desc">Coordinates specialized agents spanning Gmail, Security, Drive, Research, Code, and Finance, with Gmail MCP integration driving agent-based email operations.</p>
+          <div class="tags"><span class="tag">mcp</span><span class="tag">orchestration</span><span class="tag">gmail</span></div>
+        </div>
+
+        <div class="svc">
+          <div class="svc-head">
+            <h4>SMC Trading Terminal</h4>
+            <span class="svc-status live"><span class="dot" aria-hidden="true"></span>live</span>
+          </div>
+          <div class="svc-sub">real-time multi-pair execution dashboard</div>
+          <p class="desc">React frontend consuming a live Binance WebSocket feed. ATR-based trade execution logic across 29 instruments, with a backtesting framework, latency optimization, and live capital management.</p>
+          <div class="tags"><span class="tag">websocket</span><span class="tag">react</span><span class="tag">binance</span></div>
+        </div>
+
+        <div class="svc" style="grid-column:1 / -1;">
+          <div class="svc-head">
+            <h4>SaaS Control-Plane Concept</h4>
+            <span class="svc-status concept"><span class="dot" aria-hidden="true"></span>concept</span>
+          </div>
+          <div class="svc-sub">control-plane architecture</div>
+          <p class="desc">Architecture spanning a monitoring agent, fleet dashboard, and Stripe billing.</p>
+          <div class="tags"><span class="tag">stripe</span><span class="tag">monitoring</span><span class="tag">architecture</span></div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="cmd">contact --secure</div>
+      <h2 class="sec-title">Get in touch</h2>
+      <div class="contact-panel">
+        <p class="msg">Open to offensive security, backend, and automation engineering engagements. Reach out directly &mdash; no forms, no gatekeeping.</p>
+        <div class="contact-rows">
+          <div class="crow"><span class="k">email</span><a class="v js-contact" href="#" data-user="nzauclinton88" data-domain="gmail.com">[email protected]</a></div>
+          <div class="crow"><span class="k">phone</span><a class="v js-tel" href="#" data-tel="+254742585873">+254 742 585 873</a></div>
+          <div class="crow"><span class="k">location</span><span class="v">Ruaraka, Nairobi, Kenya</span></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Clinton Nzau Mutuku — Portfolio</div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var bootEl = document.getElementById('boot-text');
+  var full = 'session::init  authenticating operator...  access granted';
+  var h1 = document.getElementById('h1-line');
+  var role = document.getElementById('h1-role');
+  var lede = document.getElementById('h1-lede');
+  var status = document.getElementById('h1-status');
+
+  function revealRest(){
+    [h1, role, lede, status].forEach(function(el, i){
+      setTimeout(function(){ el.classList.add('reveal'); }, i * 120);
+    });
+  }
+
+  if (reduce) {
+    bootEl.textContent = full;
+    [h1, role, lede, status].forEach(function(el){ el.style.opacity = 1; el.style.transform = 'none'; });
+  } else {
+    var i = 0;
+    (function type(){
+      if (i <= full.length) {
+        bootEl.textContent = full.slice(0, i);
+        i++;
+        setTimeout(type, 16);
+      } else {
+        revealRest();
+      }
+    })();
+  }
+
+  // Email/phone unobfuscation for accessibility while reducing basic scraping
+  function makeMailto(el){
+    var user = el.getAttribute('data-user');
+    var domain = el.getAttribute('data-domain');
+    var email = user + '@' + domain;
+    el.setAttribute('href', 'mailto:' + email);
+    el.textContent = email;
+    el.addEventListener('click', function(){ /* no-op, link will open mail client */ });
+  }
+  function makeTel(el){
+    var tel = el.getAttribute('data-tel');
+    el.setAttribute('href', 'tel:' + tel);
+    el.textContent = tel.replace(/(\+\d{3})(\d{3})(\d{3})(\d{3})/, '$1 $2 $3 $4');
+  }
+
+  document.querySelectorAll('.js-contact').forEach(makeMailto);
+  document.querySelectorAll('.js-tel').forEach(makeTel);
+
+})();
+</script>
+
+</body>
+</html>
