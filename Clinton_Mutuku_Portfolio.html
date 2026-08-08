@@ -5,53 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Clinton Nzau Mutuku — Portfolio</title>
 <meta name="description" content="Clinton Nzau Mutuku — CEH-certified offensive security engineer, software and website developer, and backend/automation engineer.">
-<link rel="canonical" href="https://github.com/hexacrimsonlabs/Clinton-portfolio">
-
-<!-- Open Graph / Twitter -->
-<meta property="og:title" content="Clinton Nzau Mutuku — Portfolio">
-<meta property="og:description" content="CEH-certified offensive security engineer, backend/automation engineer and full-stack developer based in Nairobi.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://github.com/hexacrimsonlabs/Clinton-portfolio">
-<meta property="og:image" content="https://raw.githubusercontent.com/hexacrimsonlabs/Clinton-portfolio/main/og-image.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Clinton Nzau Mutuku — Portfolio">
-<meta name="twitter:description" content="CEH-certified offensive security engineer, backend/automation engineer and full-stack developer based in Nairobi.">
-
-<!-- Performance: fonts -->
-<link rel="dns-prefetch" href="https://fonts.gstatic.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" onload="this.rel='stylesheet'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
-
-<!-- Favicons (placeholders - replace with your icons if you add them to repo) -->
-<link rel="icon" href="/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#0A0B0D">
-
-<!-- Basic Content Security Policy (meta-level). Adjust to your hosting requirements. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https:;">
-
-<!-- JSON-LD structured data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Clinton Nzau Mutuku",
-  "jobTitle": "Offensive Security Engineer",
-  "description": "CEH-certified security engineer specializing in offensive security, red team operations, vulnerability research, and backend/automation engineering.",
-  "url": "https://github.com/hexacrimsonlabs/Clinton-portfolio",
-  "email": "mailto:nzauclinton88@gmail.com",
-  "telephone": "+254742585873",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Ruaraka",
-    "addressRegion": "Nairobi",
-    "addressCountry": "Kenya"
-  }
-}
-</script>
-
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#0A0B0D;
@@ -88,23 +44,10 @@
     outline-offset:3px;
   }
 
-  /* Skip link */
-  .skip-link{
-    position:fixed; top:8px; left:8px; z-index:60;
-    background:var(--panel); color:var(--text); padding:10px 12px; border-radius:6px;
-    transform:translateY(-200%); transition:transform .18s ease; font-family:var(--mono); font-size:13px;
-  }
-  .skip-link:focus{transform:translateY(0);} 
-
-  /* background grid texture */
-  .grid-bg{
+  /* animated hexagon background canvas */
+  #hex-bg{
     position:fixed; inset:0; z-index:-1;
-    background-image:
-      linear-gradient(var(--line-soft) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
-    background-size:42px 42px;
-    opacity:0.35;
-    mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 90%);
+    background:var(--bg);
   }
 
   /* ---- nav ---- */
@@ -132,7 +75,7 @@
     text-decoration:none; color:var(--text-dim);
     transition:color .15s ease;
   }
-  .navlinks a:hover{color:var(--crimson-glow);} 
+  .navlinks a:hover{color:var(--crimson-glow);}
   .navlinks{display:none;}
   @media(min-width:640px){ .navlinks{display:flex;} }
 
@@ -162,7 +105,7 @@
     color:var(--text);
     opacity:0; transform:translateY(6px);
   }
-  .hero h1 .accent{color:var(--crimson-glow);} 
+  .hero h1 .accent{color:var(--crimson-glow);}
   .hero .role{
     font-family:var(--mono); font-size:clamp(13px,2vw,15px);
     color:var(--text-dim); margin-top:12px; max-width:560px;
@@ -189,8 +132,8 @@
     font-family:var(--mono); font-size:11.5px; color:var(--text-dim);
   }
   .chip .dot{width:6px; height:6px; border-radius:50%; flex:none;}
-  .chip .dot.on{background:var(--green); box-shadow:0 0 0 2px rgba(95,174,122,0.18);} 
-  .chip .dot.warn{background:var(--amber); box-shadow:0 0 0 2px rgba(217,154,69,0.18);} 
+  .chip .dot.on{background:var(--green); box-shadow:0 0 0 2px rgba(95,174,122,0.18);}
+  .chip .dot.warn{background:var(--amber); box-shadow:0 0 0 2px rgba(217,154,69,0.18);}
   .chip b{color:var(--text); font-weight:500;}
 
   @media (prefers-reduced-motion: reduce){
@@ -213,7 +156,7 @@
     margin-bottom:28px; letter-spacing:-0.01em;
   }
 
-  /* ---- rest unchanged ---- */
+  /* ---- capabilities ---- */
   .cap-grid{
     display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
     background:var(--line); border:1px solid var(--line); border-radius:6px; overflow:hidden;
@@ -243,6 +186,7 @@
   .cap.trading .cap-tag{color:var(--amber);} 
   .cap.backend .cap-tag{color:#6FA8DC;}
 
+  /* ---- engagements ---- */
   .log{
     border:1px solid var(--line); border-radius:6px; overflow:hidden;
   }
@@ -261,6 +205,7 @@
   .log-body h4{font-size:15px; font-weight:600; color:var(--text); margin-bottom:4px;} 
   .log-body p{font-size:13.5px; color:var(--text-dim);} 
 
+  /* ---- fleet / projects ---- */
   .fleet-grid{
     display:grid; grid-template-columns:1fr 1fr; gap:14px;
   }
@@ -291,6 +236,7 @@
     border:1px solid var(--line); border-radius:3px; padding:3px 7px;
   }
 
+  /* ---- contact ---- */
   .contact-panel{
     border:1px solid var(--line); border-radius:6px; background:var(--panel);
     padding:32px 28px;
@@ -315,19 +261,18 @@
 </head>
 <body>
 
-<a href="#main" class="skip-link">Skip to main content</a>
-<div class="grid-bg" aria-hidden="true"></div>
+<canvas id="hex-bg" aria-hidden="true"></canvas>
 
-<header class="nav" role="banner">
+<header class="nav">
   <div class="nav-inner">
-    <a href="#main" class="brand">
+    <a href="#top" class="brand">
       <svg class="hexmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M4 4L11 12L4 20" stroke="#C4364A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M13 20H20" stroke="#C4364A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13 20H20" stroke="#C4364A" stroke-width="1.8" stroke-linecap="round"/>
       </svg>
       clinton_mutuku
     </a>
-    <nav class="navlinks" role="navigation" aria-label="Primary">
+    <nav class="navlinks">
       <a href="#capabilities">capabilities</a>
       <a href="#engagements">engagements</a>
       <a href="#projects">projects</a>
@@ -336,12 +281,12 @@
   </div>
 </header>
 
-<main id="main" tabindex="-1">
+<main id="top">
   <div class="wrap">
     <section class="hero" style="border-top:none; padding-top:88px;">
       <div class="term-line">
         <span class="dot" aria-hidden="true"></span>
-        <span id="boot-text" aria-live="polite"></span><span class="cursor" aria-hidden="true"></span>
+        <span id="boot-text"></span><span class="cursor" aria-hidden="true"></span>
       </div>
 
       <h1 id="h1-line">Clinton Nzau Mutuku</h1>
@@ -355,9 +300,9 @@
       </p>
 
       <div class="status-strip" id="h1-status">
-        <div class="chip"><span class="dot on" aria-hidden="true"></span>CEH <b>verified</b></div>
-        <div class="chip"><span class="dot on" aria-hidden="true"></span>Based in <b>Nairobi, KE</b></div>
-        <div class="chip"><span class="dot warn" aria-hidden="true"></span>Status: <b>open to engagements</b></div>
+        <div class="chip"><span class="dot on"></span>CEH <b>verified</b></div>
+        <div class="chip"><span class="dot on"></span>Based in <b>Nairobi, KE</b></div>
+        <div class="chip"><span class="dot warn"></span>Status: <b>open to engagements</b></div>
       </div>
     </section>
 
@@ -407,14 +352,14 @@
       <h2 class="sec-title">Security engagements &amp; research</h2>
       <div class="log">
         <div class="log-row">
-          <div class="log-status"><span class="dot" aria-hidden="true"></span><span>CLIENT CONTRACT</span></div>
+          <div class="log-status"><span class="dot"></span><span>CLIENT CONTRACT</span></div>
           <div class="log-body">
             <h4>Red team engagement</h4>
             <p>Adversary simulation for a client engagement, including Active Directory attack path mapping and privilege escalation testing.</p>
           </div>
         </div>
         <div class="log-row">
-          <div class="log-status"><span class="dot" aria-hidden="true"></span><span>HACKERONE</span></div>
+          <div class="log-status"><span class="dot"></span><span>HACKERONE</span></div>
           <div class="log-body">
             <h4>Bug bounty research</h4>
             <p>Independent vulnerability research and reporting on the HackerOne platform, assessing web and API attack surfaces.</p>
@@ -431,7 +376,7 @@
         <div class="svc">
           <div class="svc-head">
             <h4>Bot-Command-Central / Crescent</h4>
-            <span class="svc-status online"><span class="dot" aria-hidden="true"></span>online</span>
+            <span class="svc-status online"><span class="dot"></span>online</span>
           </div>
           <div class="svc-sub">production telegram bot platform</div>
           <p class="desc">TypeScript monorepo with tiered access control, the Hexagon AI assistant layer with multi-model fallback via OpenRouter, and Harmony DB health monitoring with automated backups. CryptoBot payments integrated; esbuild / pnpm / Render deployment issues resolved in CI.</p>
@@ -441,7 +386,7 @@
         <div class="svc">
           <div class="svc-head">
             <h4>Hex</h4>
-            <span class="svc-status online"><span class="dot" aria-hidden="true"></span>online</span>
+            <span class="svc-status online"><span class="dot"></span>online</span>
           </div>
           <div class="svc-sub">slack ai agent system &mdash; bolt framework</div>
           <p class="desc">Voice-activated agent with state commands and three distinct AI personas. Cron-scheduled briefings, with a React monitoring dashboard.</p>
@@ -451,7 +396,7 @@
         <div class="svc">
           <div class="svc-head">
             <h4>C.L.I.N.T.O.N.</h4>
-            <span class="svc-status online"><span class="dot" aria-hidden="true"></span>active</span>
+            <span class="svc-status online"><span class="dot"></span>active</span>
           </div>
           <div class="svc-sub">multi-agent orchestration system</div>
           <p class="desc">Coordinates specialized agents spanning Gmail, Security, Drive, Research, Code, and Finance, with Gmail MCP integration driving agent-based email operations.</p>
@@ -461,7 +406,7 @@
         <div class="svc">
           <div class="svc-head">
             <h4>SMC Trading Terminal</h4>
-            <span class="svc-status live"><span class="dot" aria-hidden="true"></span>live</span>
+            <span class="svc-status live"><span class="dot"></span>live</span>
           </div>
           <div class="svc-sub">real-time multi-pair execution dashboard</div>
           <p class="desc">React frontend consuming a live Binance WebSocket feed. ATR-based trade execution logic across 29 instruments, with a backtesting framework, latency optimization, and live capital management.</p>
@@ -471,7 +416,7 @@
         <div class="svc" style="grid-column:1 / -1;">
           <div class="svc-head">
             <h4>SaaS Control-Plane Concept</h4>
-            <span class="svc-status concept"><span class="dot" aria-hidden="true"></span>concept</span>
+            <span class="svc-status concept"><span class="dot"></span>concept</span>
           </div>
           <div class="svc-sub">control-plane architecture</div>
           <p class="desc">Architecture spanning a monitoring agent, fleet dashboard, and Stripe billing.</p>
@@ -487,8 +432,8 @@
       <div class="contact-panel">
         <p class="msg">Open to offensive security, backend, and automation engineering engagements. Reach out directly &mdash; no forms, no gatekeeping.</p>
         <div class="contact-rows">
-          <div class="crow"><span class="k">email</span><a class="v js-contact" href="#" data-user="nzauclinton88" data-domain="gmail.com">[email protected]</a></div>
-          <div class="crow"><span class="k">phone</span><a class="v js-tel" href="#" data-tel="+254742585873">+254 742 585 873</a></div>
+          <div class="crow"><span class="k">email</span><a class="v" href="mailto:nzauclinton88@gmail.com">nzauclinton88@gmail.com</a></div>
+          <div class="crow"><span class="k">phone</span><a class="v" href="tel:+254742585873">+254 742 585 873</a></div>
           <div class="crow"><span class="k">location</span><span class="v">Ruaraka, Nairobi, Kenya</span></div>
         </div>
       </div>
@@ -499,6 +444,118 @@
 <footer>
   <div class="wrap">Clinton Nzau Mutuku — Portfolio</div>
 </footer>
+
+<script>
+/* ---- live hexagon field, reacts to mouse ---- */
+(function(){
+  var canvas = document.getElementById('hex-bg');
+  var ctx = canvas.getContext('2d');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var W, H, DPR;
+  var hexes = [];
+  var mouse = { x: -9999, y: -9999, active: false };
+  var HEX_R = 30;              // hex radius
+  var HEX_GAP = 4;             // visual gap between hexes
+  var REACT_RADIUS = 190;      // mouse influence radius
+  var t = 0;
+
+  function resize(){
+    DPR = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width = W * DPR;
+    canvas.height = H * DPR;
+    canvas.style.width = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    buildGrid();
+  }
+
+  function buildGrid(){
+    hexes = [];
+    var w = HEX_R * 2;
+    var hStep = w * 0.75 + HEX_GAP;      // horizontal step (pointy layout using flat-top math)
+    var vStep = Math.sqrt(3) * HEX_R + HEX_GAP;
+    var cols = Math.ceil(W / hStep) + 2;
+    var rows = Math.ceil(H / vStep) + 2;
+    for (var c = -1; c < cols; c++){
+      for (var r = -1; r < rows; r++){
+        var x = c * hStep;
+        var y = r * vStep + (c % 2 !== 0 ? vStep / 2 : 0);
+        hexes.push({
+          x: x, y: y,
+          phase: Math.random() * Math.PI * 2,
+          speed: 0.6 + Math.random() * 0.5
+        });
+      }
+    }
+  }
+
+  function hexPath(cx, cy, r){
+    ctx.beginPath();
+    for (var i = 0; i < 6; i++){
+      var ang = Math.PI / 180 * (60 * i);
+      var px = cx + r * Math.cos(ang);
+      var py = cy + r * Math.sin(ang);
+      if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    }
+    ctx.closePath();
+  }
+
+  function draw(){
+    ctx.clearRect(0, 0, W, H);
+    for (var i = 0; i < hexes.length; i++){
+      var h = hexes[i];
+      var dx = h.x - mouse.x, dy = h.y - mouse.y;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      var proximity = mouse.active ? Math.max(0, 1 - dist / REACT_RADIUS) : 0;
+
+      var idle = reduce ? 0 : (Math.sin(t * h.speed + h.phase) + 1) / 2 * 0.12;
+      var glow = proximity * 0.85 + idle;
+      var scale = 1 + proximity * 0.22;
+
+      var alphaLine = 0.10 + glow * 0.55;
+      var alphaFill = glow * 0.16;
+
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = 'rgba(196,54,74,' + Math.min(alphaLine, 0.95) + ')';
+      if (alphaFill > 0.01){
+        ctx.fillStyle = 'rgba(196,54,74,' + Math.min(alphaFill, 0.4) + ')';
+        hexPath(h.x, h.y, HEX_R * scale);
+        ctx.fill();
+      }
+      hexPath(h.x, h.y, HEX_R * scale);
+      ctx.stroke();
+    }
+  }
+
+  function loop(){
+    t += 0.016;
+    draw();
+    requestAnimationFrame(loop);
+  }
+
+  window.addEventListener('resize', resize, { passive: true });
+  window.addEventListener('mousemove', function(e){
+    mouse.x = e.clientX; mouse.y = e.clientY; mouse.active = true;
+  }, { passive: true });
+  window.addEventListener('mouseleave', function(){ mouse.active = false; });
+  window.addEventListener('touchmove', function(e){
+    if (e.touches && e.touches[0]){
+      mouse.x = e.touches[0].clientX; mouse.y = e.touches[0].clientY; mouse.active = true;
+    }
+  }, { passive: true });
+  window.addEventListener('touchend', function(){ mouse.active = false; });
+
+  resize();
+  if (reduce){
+    draw();                 // static single frame, no animation loop
+  } else {
+    requestAnimationFrame(loop);
+  }
+})();
+</script>
 
 <script>
 (function(){
@@ -531,25 +588,6 @@
       }
     })();
   }
-
-  // Email/phone unobfuscation for accessibility while reducing basic scraping
-  function makeMailto(el){
-    var user = el.getAttribute('data-user');
-    var domain = el.getAttribute('data-domain');
-    var email = user + '@' + domain;
-    el.setAttribute('href', 'mailto:' + email);
-    el.textContent = email;
-    el.addEventListener('click', function(){ /* no-op, link will open mail client */ });
-  }
-  function makeTel(el){
-    var tel = el.getAttribute('data-tel');
-    el.setAttribute('href', 'tel:' + tel);
-    el.textContent = tel.replace(/(\+\d{3})(\d{3})(\d{3})(\d{3})/, '$1 $2 $3 $4');
-  }
-
-  document.querySelectorAll('.js-contact').forEach(makeMailto);
-  document.querySelectorAll('.js-tel').forEach(makeTel);
-
 })();
 </script>
 
